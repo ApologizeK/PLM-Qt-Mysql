@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QDlgRegisterClass</class>
+ <widget class="QDialog" name="QDlgRegisterClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>289</width>
+    <height>323</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QDlgRegister</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QWidget" name="layoutWidget">
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="4" column="0" colspan="2">
+        <widget class="QComboBox" name="comboBoxParent">
+         <item>
+          <property name="text">
+           <string>您母亲的姓名是？</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>您父亲的姓名是？</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="7" column="0" colspan="3">
+        <widget class="QLabel" name="labelWarning">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelUsername">
+         <property name="text">
+          <string>用户名</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelPwd">
+         <property name="text">
+          <string>密码</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QLineEdit" name="lineEditSchool"/>
+       </item>
+       <item row="5" column="0" colspan="2">
+        <widget class="QComboBox" name="comboBoxFavourite">
+         <item>
+          <property name="text">
+           <string>您最喜欢的书名是？</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>您最喜欢的车是？</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>您最喜欢的宠物是？</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>您最喜欢的运动是？</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="0" column="1" colspan="2">
+        <widget class="QLineEdit" name="lineEditUername"/>
+       </item>
+       <item row="1" column="1" colspan="2">
+        <widget class="QLineEdit" name="lineEditPwd"/>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <widget class="QComboBox" name="comboBoxSchool">
+         <item>
+          <property name="text">
+           <string>您小学就读于？</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>您初中就读于？</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>您高中就读于？</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>您大学就读于？</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="labelPwd2">
+         <property name="text">
+          <string>再次输入密码</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QLineEdit" name="lineEditFavourite"/>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLineEdit" name="lineEditParent"/>
+       </item>
+       <item row="2" column="1" colspan="2">
+        <widget class="QLineEdit" name="lineEditPwd2"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="btnReg">
+         <property name="text">
+          <string>注册</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="btnCancel">
+         <property name="text">
+          <string>取消</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnCancel</sender>
+   <signal>clicked()</signal>
+   <receiver>QDlgRegisterClass</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>329</x>
+     <y>427</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>221</x>
+     <y>233</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
