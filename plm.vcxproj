@@ -84,6 +84,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="QDlgLogin.cpp" />
+    <ClCompile Include="QDlgPwd.cpp" />
     <ClCompile Include="QDlgRegister.cpp" />
     <QtRcc Include="MainWindow.qrc" />
     <QtUic Include="MainWindow.ui" />
@@ -91,12 +92,15 @@
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="main.cpp" />
     <QtUic Include="QDlgLogin.ui" />
+    <QtUic Include="QDlgPwd.ui" />
     <QtUic Include="QDlgRegister.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="QDlgLogin.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="QDlgPwd.h" />
+    <ClInclude Include="x64\Debug\uic\ui_QDlgPwd.h" />
     <ClInclude Include="x64\Debug\uic\ui_QDlgRegister.h" />
     <QtMoc Include="QDlgRegister.h" />
     <ClInclude Include="x64\Debug\uic\ui_MainWindow.h" />

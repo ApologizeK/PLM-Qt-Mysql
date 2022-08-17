@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
@@ -38,14 +39,15 @@ public:
     QPushButton *btnRegister;
     QCheckBox *checkBoxRemeber;
     QLabel *labelPassword;
-    QLineEdit *lineEditUsername;
     QPushButton *btnLogin;
+    QLabel *labelTips;
+    QComboBox *comboBoxUsername;
 
     void setupUi(QDialog *QDlgLoginClass)
     {
         if (QDlgLoginClass->objectName().isEmpty())
             QDlgLoginClass->setObjectName(QStringLiteral("QDlgLoginClass"));
-        QDlgLoginClass->resize(549, 264);
+        QDlgLoginClass->resize(814, 264);
         splitter = new QSplitter(QDlgLoginClass);
         splitter->setObjectName(QStringLiteral("splitter"));
         splitter->setGeometry(QRect(0, 10, 551, 251));
@@ -65,43 +67,51 @@ public:
         labelUsername = new QLabel(layoutWidget);
         labelUsername->setObjectName(QStringLiteral("labelUsername"));
 
-        gridLayout->addWidget(labelUsername, 0, 0, 1, 1);
+        gridLayout->addWidget(labelUsername, 1, 0, 1, 1);
 
         lineEditPassword = new QLineEdit(layoutWidget);
         lineEditPassword->setObjectName(QStringLiteral("lineEditPassword"));
 
-        gridLayout->addWidget(lineEditPassword, 1, 1, 1, 3);
+        gridLayout->addWidget(lineEditPassword, 2, 1, 1, 3);
 
         btnForgetPwd = new QPushButton(layoutWidget);
         btnForgetPwd->setObjectName(QStringLiteral("btnForgetPwd"));
         btnForgetPwd->setAutoExclusive(false);
 
-        gridLayout->addWidget(btnForgetPwd, 2, 2, 1, 1);
+        gridLayout->addWidget(btnForgetPwd, 3, 2, 1, 1);
 
         btnRegister = new QPushButton(layoutWidget);
         btnRegister->setObjectName(QStringLiteral("btnRegister"));
 
-        gridLayout->addWidget(btnRegister, 2, 3, 1, 1);
+        gridLayout->addWidget(btnRegister, 3, 3, 1, 1);
 
         checkBoxRemeber = new QCheckBox(layoutWidget);
         checkBoxRemeber->setObjectName(QStringLiteral("checkBoxRemeber"));
 
-        gridLayout->addWidget(checkBoxRemeber, 2, 1, 1, 1);
+        gridLayout->addWidget(checkBoxRemeber, 3, 1, 1, 1);
 
         labelPassword = new QLabel(layoutWidget);
         labelPassword->setObjectName(QStringLiteral("labelPassword"));
 
-        gridLayout->addWidget(labelPassword, 1, 0, 1, 1);
-
-        lineEditUsername = new QLineEdit(layoutWidget);
-        lineEditUsername->setObjectName(QStringLiteral("lineEditUsername"));
-
-        gridLayout->addWidget(lineEditUsername, 0, 1, 1, 3);
+        gridLayout->addWidget(labelPassword, 2, 0, 1, 1);
 
         btnLogin = new QPushButton(layoutWidget);
         btnLogin->setObjectName(QStringLiteral("btnLogin"));
 
-        gridLayout->addWidget(btnLogin, 3, 1, 1, 3);
+        gridLayout->addWidget(btnLogin, 4, 1, 1, 3);
+
+        labelTips = new QLabel(layoutWidget);
+        labelTips->setObjectName(QStringLiteral("labelTips"));
+        labelTips->setMinimumSize(QSize(0, 20));
+        labelTips->setMaximumSize(QSize(16777215, 15));
+
+        gridLayout->addWidget(labelTips, 0, 0, 1, 4);
+
+        comboBoxUsername = new QComboBox(layoutWidget);
+        comboBoxUsername->setObjectName(QStringLiteral("comboBoxUsername"));
+        comboBoxUsername->setEditable(true);
+
+        gridLayout->addWidget(comboBoxUsername, 1, 1, 1, 3);
 
         splitter->addWidget(layoutWidget);
 
@@ -120,6 +130,7 @@ public:
         checkBoxRemeber->setText(QApplication::translate("QDlgLoginClass", "\350\256\260\344\275\217\345\257\206\347\240\201", Q_NULLPTR));
         labelPassword->setText(QApplication::translate("QDlgLoginClass", "\345\257\206\347\240\201\357\274\232", Q_NULLPTR));
         btnLogin->setText(QApplication::translate("QDlgLoginClass", "\347\231\273\345\275\225", Q_NULLPTR));
+        labelTips->setText(QString());
     } // retranslateUi
 
 };

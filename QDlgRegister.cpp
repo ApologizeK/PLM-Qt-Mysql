@@ -11,8 +11,13 @@ QDlgRegister::QDlgRegister(QWidget *parent)
 	ui.lineEditPwd2->setEchoMode(QLineEdit::Password);
 	this->resize(270, 325);
 	this->setGeometry(800, 300, 270, 325);
+	this->setWindowTitle("设备生命周期管理系统-注册");
 	//打开数据库 
 	openDatabase();
+
+	QPalette pal = ui.labelWarning->palette();
+	pal.setColor(QPalette::WindowText, Qt::red);
+	ui.labelWarning->setPalette(pal);
 }
 
 //打开数据库
@@ -46,17 +51,11 @@ void QDlgRegister::on_btnReg_clicked()
 	if (username == NULL || pwd == NULL || pwd2 == NULL || schAns == NULL || parAns == NULL || favAns == NULL)
 	{
 		ui.labelWarning->setText("输入不能为空!");
-		QPalette pal = ui.labelWarning->palette();
-		pal.setColor(QPalette::WindowText, Qt::red);
-		ui.labelWarning->setPalette(pal);
 		ui.btnReg->setEnabled(false);
 	}
 	else
 	{
 		ui.labelWarning->setText("");
-		QPalette pal = ui.labelWarning->palette();
-		pal.setColor(QPalette::WindowText, Qt::black);
-		ui.labelWarning->setPalette(pal);
 		ui.btnReg->setEnabled(false);
 
 		//数据库操作
@@ -117,18 +116,35 @@ void QDlgRegister::on_lineEditPwd2_textChanged()
 	if (pwd2 != pwd)
 	{
 		ui.labelWarning->setText("密码不一致");
-		QPalette pal = ui.labelWarning->palette();
-		pal.setColor(QPalette::WindowText, Qt::red);
-		ui.labelWarning->setPalette(pal);
 		ui.btnReg->setEnabled(false);
 	}
 	else
 	{
 		ui.labelWarning->setText("");
-		QPalette pal = ui.labelWarning->palette();
-		pal.setColor(QPalette::WindowText, Qt::black);
-		ui.labelWarning->setPalette(pal);
 		ui.btnReg->setEnabled(true);
+	}
+}
+
+//检查用户名是否重复
+void QDlgRegister::on_lineEditUername_textChanged(QString username)
+{
+	QSqlQuery qry_sel;
+	qry_sel.prepare("select username from tb_user");
+	if (qry_sel.exec())
+	{
+		qDebug() << qry_sel.lastQuery() << "执行成功！";
+
+		while (qry_sel.next())
+		{
+			if (qry_sel.value(0).toString() == username)
+			{
+				ui.labelWarning->setText("用户名重复！");
+			}
+		}
+	}
+	else
+	{
+		qDebug() << qry_sel.lastError();
 	}
 }
 

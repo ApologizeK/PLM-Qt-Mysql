@@ -15,14 +15,34 @@ class QDlgLogin : public QDialog
 private:
 	//数据库对象
 	QSqlDatabase db;
+
+	//存储用户信息
+	QString savedUsername;
+	QString savedPwd;
+	bool saved = false;
+	
 	//打开数据库
 	void openDatabase();
-	//打开数据表
-	void openTable(QString tableName);
+
+	//初始化下拉列表
+	void initComobox();
 
 private slots:
 	//注册按钮
 	void on_btnRegister_clicked();
+
+	//登录按钮
+	void on_btnLogin_clicked();
+
+	//忘记密码
+	void on_btnForgetPwd_clicked();
+
+	//记住密码
+	void on_comboBoxUsername_currentTextChanged(QString username);
+
+signals:
+	//用于判断登录是否成功的信号
+	//void login_correct();
 
 public:
 	QDlgLogin(QWidget *parent = nullptr);

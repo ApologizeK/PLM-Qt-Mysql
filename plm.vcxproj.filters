@@ -46,6 +46,9 @@
     <ClCompile Include="QDlgRegister.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="QDlgPwd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="QDlgLogin.h">
@@ -54,12 +57,18 @@
     <QtMoc Include="QDlgRegister.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="QDlgPwd.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="QDlgLogin.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="QDlgRegister.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="QDlgPwd.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -71,6 +80,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="x64\Debug\uic\ui_QDlgRegister.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\uic\ui_QDlgPwd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
